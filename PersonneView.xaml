@@ -1,0 +1,15 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lebra"
+        xmlns:View="clr-namespace:Lebra.View" x:Class="Lebra.PersonneView"
+        mc:Ignorable="d"
+        Title="PersonneView" Height="661.856" Width="1381.445">
+    <Grid Margin="82,0,2,34"   >
+        <View:UserPersonne HorizontalAlignment="Left" Height="472" Margin="-161,60,0,0" VerticalAlignment="Top" Width="1441"/>
+
+
+    </Grid>
+</Window>

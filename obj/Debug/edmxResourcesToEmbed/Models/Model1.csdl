@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LebraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACTION">
+    <Key>
+      <PropertyRef Name="ID_UTILI" />
+      <PropertyRef Name="ID_CONTRAT_G" />
+    </Key>
+    <Property Name="ID_UTILI" Type="Int32" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="Int32" Nullable="false" />
+    <Property Name="TYPE_ACTION" Type="Int32" />
+    <Property Name="DATE_ACTION" Type="Int32" />
+    <Property Name="ID_ACTION" Type="Int32" />
+    <Property Name="TOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AUTOMIBILE_RELATION_PERSON">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="Int32" Nullable="false" />
+    <Property Name="TYPE_RELATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AUTOMOBILE">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_VEH_ASSUREE" Type="Int32" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTRE_CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_AUTRE_CONTRAT" />
+    </Key>
+    <Property Name="ID_AUTRE_CONTRAT" Type="Int32" Nullable="false" />
+    <Property Name="ID_COMP" Type="Int32" Nullable="false" />
+    <Property Name="REF_CONTRACT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COMPANGIE_ASSURANCE">
+    <Key>
+      <PropertyRef Name="ID_COMP" />
+    </Key>
+    <Property Name="ID_COMP" Type="Int32" Nullable="false" />
+    <Property Name="COMP_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_G" />
+    </Key>
+    <Property Name="ID_CONTRAT_G" Type="Int32" Nullable="false" />
+    <Property Name="ID_INTER" Type="Int32" Nullable="false" />
+    <Property Name="N_CONTRAT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_CREATION" Type="Int32" />
+    <Property Name="DATE_ECHANCE" Type="Int32" />
+    <Property Name="DUREE_DE_CONTRAT" Type="Int32" />
+    <Property Name="PRIME_TOTAL" Type="Double" />
+  </EntityType>
+  <EntityType Name="GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_GARANTIE" Type="Int32" Nullable="false" />
+    <Property Name="ID_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="GARANTIE1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DESC_PUBLIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GARANTIE_AUTOMIBILE">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_GARANTIE" Type="Int32" Nullable="false" />
+    <Property Name="VALEUR_VEHICULE" Type="Double" />
+    <Property Name="VALEUR_REMORQUE" Type="Double" />
+    <Property Name="TAUX_FRANCHISE" Type="Double" />
+    <Property Name="FRANCHISE_MIN" Type="Double" />
+    <Property Name="PRIME_ANNUAL" Type="Double" />
+    <Property Name="PRIME_COMPTANT" Type="Double" />
+    <Property Name="VALEUR_V_MAX" Type="Double" />
+    <Property Name="DESES" Type="Double" />
+    <Property Name="INVALIDITE" Type="Double" />
+    <Property Name="FR_MEDICAUX" Type="Double" />
+    <Property Name="FR_RAPATRIEMENT" Type="Double" />
+    <Property Name="AMENAG_DOM" Type="Double" />
+  </EntityType>
+  <EntityType Name="INTERMEDIAIRE">
+    <Key>
+      <PropertyRef Name="ID_INTER" />
+    </Key>
+    <Property Name="ID_INTER" Type="Int32" Nullable="false" />
+    <Property Name="INTER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INTER_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INTER_ADRESSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="INTER_TELEPHONE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="INTER_DESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MARQUE">
+    <Key>
+      <PropertyRef Name="ID_MARQUE" />
+    </Key>
+    <Property Name="ID_MARQUE" Type="Int32" Nullable="false" />
+    <Property Name="MARQUE1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MODEL">
+    <Key>
+      <PropertyRef Name="ID_MODEL" />
+    </Key>
+    <Property Name="ID_MODEL" Type="Int32" Nullable="false" />
+    <Property Name="ID_MARQUE" Type="Int32" Nullable="false" />
+    <Property Name="MODEL1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PAY">
+    <Key>
+      <PropertyRef Name="ID_PAYS" />
+    </Key>
+    <Property Name="ID_PAYS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PAYS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSONNEs" Relationship="Self.FK__PERSONNE__Fk_ID___4183B671" FromRole="PAYS" ToRole="PERSONNE" />
+    <NavigationProperty Name="VILLES" Relationship="Self.FK__VILLES__ID_PAYS__51BA1E3A" FromRole="PAYS" ToRole="VILLES" />
+  </EntityType>
+  <EntityType Name="PERSONNE">
+    <Key>
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_PERSONNE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fk_ID_SOURCE" Type="Int32" />
+    <Property Name="Fk_ID_VILLE" Type="Int32" />
+    <Property Name="Fk_ID_SEXE" Type="Int32" />
+    <Property Name="Fk_ID_TIDEN" Type="Int32" />
+    <Property Name="Fk_ID_PAYS" Type="Int32" />
+    <Property Name="NOM_COMPLET" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_NAISS" Type="Double" />
+    <Property Name="ADRESSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_POSTAL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="N_TELEPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="N_IDENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N_PIRME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CATE_PERMI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_PERM" Type="Double" />
+    <Property Name="ADRESSE_MAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PAY" Relationship="Self.FK__PERSONNE__Fk_ID___4183B671" FromRole="PERSONNE" ToRole="PAYS" />
+    <NavigationProperty Name="SOURCE_PERSONNE" Relationship="Self.FK__PERSONNE__Fk_ID___3DB3258D" FromRole="PERSONNE" ToRole="SOURCE_PERSONNE" />
+    <NavigationProperty Name="VILLE" Relationship="Self.FK__PERSONNE__Fk_ID___3EA749C6" FromRole="PERSONNE" ToRole="VILLES" />
+    <NavigationProperty Name="SEXE" Relationship="Self.FK__PERSONNE__Fk_ID___3F9B6DFF" FromRole="PERSONNE" ToRole="SEXE" />
+    <NavigationProperty Name="TYPE_IDENTITE" Relationship="Self.FK__PERSONNE__Fk_ID___408F9238" FromRole="PERSONNE" ToRole="TYPE_IDENTITE" />
+  </EntityType>
+  <EntityType Name="RC_SCOLAIRE">
+    <Key>
+      <PropertyRef Name="ID_RC_SCOLAIRE" />
+    </Key>
+    <Property Name="ID_RC_SCOLAIRE" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="Int32" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SETTING_UTILI">
+    <Key>
+      <PropertyRef Name="ID_SU" />
+    </Key>
+    <Property Name="ID_SU" Type="Int32" Nullable="false" />
+    <Property Name="ID_UTILI" Type="Int32" Nullable="false" />
+    <Property Name="DEFAULT_SU" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE_MENU" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SEXE">
+    <Key>
+      <PropertyRef Name="ID_SEXE" />
+    </Key>
+    <Property Name="ID_SEXE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEXE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSONNEs" Relationship="Self.FK__PERSONNE__Fk_ID___3F9B6DFF" FromRole="SEXE" ToRole="PERSONNE" />
+  </EntityType>
+  <EntityType Name="SOURCE_PERSONNE">
+    <Key>
+      <PropertyRef Name="ID_SOURCE" />
+    </Key>
+    <Property Name="ID_SOURCE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TYPE_SOURCE" Type="Int32" />
+    <Property Name="NOM_SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ADRESSE_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TELEPHONE_SOURCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_SOURCE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSONNEs" Relationship="Self.FK__PERSONNE__Fk_ID___3DB3258D" FromRole="SOURCE_PERSONNE" ToRole="PERSONNE" />
+    <NavigationProperty Name="TYPE_SOURCE" Relationship="Self.FK__SOURCE_PE__ID_TY__351DDF8C" FromRole="SOURCE_PERSONNE" ToRole="TYPE_SOURCE" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TOURISME">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="Int32" Nullable="false" />
+    <Property Name="ID_AUTRE_CONTRAT" Type="Int32" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TOURISME_GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="Int32" Nullable="false" />
+    <Property Name="ID_GARANTIE" Type="Int32" Nullable="false" />
+    <Property Name="PRIME" Type="Double" />
+  </EntityType>
+  <EntityType Name="TOURISME_PERSONNE_RELATION">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="Int32" Nullable="false" />
+    <Property Name="TYPE_RELATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TYPE_GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_TYPE" />
+    </Key>
+    <Property Name="ID_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="TYPE_TEXT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TYPE_IDENTITE">
+    <Key>
+      <PropertyRef Name="ID_TIDEN" />
+    </Key>
+    <Property Name="ID_TIDEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE_IDENTITE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PERSONNEs" Relationship="Self.FK__PERSONNE__Fk_ID___408F9238" FromRole="TYPE_IDENTITE" ToRole="PERSONNE" />
+  </EntityType>
+  <EntityType Name="TYPE_SOURCE">
+    <Key>
+      <PropertyRef Name="ID_TYPE_SOURCE" />
+    </Key>
+    <Property Name="ID_TYPE_SOURCE" Type="Int32" Nullable="false" />
+    <Property Name="TYPE_SOURCE1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SOURCE_PERSONNE" Relationship="Self.FK__SOURCE_PE__ID_TY__351DDF8C" FromRole="TYPE_SOURCE" ToRole="SOURCE_PERSONNE" />
+  </EntityType>
+  <EntityType Name="UTILISATEUR_BLOOM">
+    <Key>
+      <PropertyRef Name="ID_UTILI" />
+    </Key>
+    <Property Name="ID_UTILI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_UTIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="MOTS_PASS_UTIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_CREATION" Type="Double" />
+    <Property Name="DATE_LAST_CNX" Type="Double" />
+    <Property Name="N_TELE" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VEHICULE_ASSUREE">
+    <Key>
+      <PropertyRef Name="ID_VEH_ASSUREE" />
+    </Key>
+    <Property Name="ID_VEH_ASSUREE" Type="Int32" Nullable="false" />
+    <Property Name="ID_MARQUE" Type="Int32" Nullable="false" />
+    <Property Name="ID_MODEL" Type="Int32" />
+    <Property Name="IMMATRICULATION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PUIS_F" Type="Int32" />
+    <Property Name="PTC" Type="Int32" />
+    <Property Name="REMORQUE" Type="Int32" />
+    <Property Name="DMC" Type="Int32" />
+    <Property Name="MUTATION" Type="Int32" />
+    <Property Name="N_PLACES" Type="Int32" />
+    <Property Name="ORG_CREDI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="POTE_AV" Type="Int32" />
+    <Property Name="VALEUR_NEUF" Type="Double" />
+    <Property Name="VALEUR_DECLAR" Type="Double" />
+    <Property Name="VALEUR_GLACE" Type="Double" />
+    <Property Name="VALEUR_AV" Type="Double" />
+  </EntityType>
+  <EntityType Name="VILLE">
+    <Key>
+      <PropertyRef Name="ID_VILLE" />
+    </Key>
+    <Property Name="ID_VILLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_VILLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PAYS" Type="Int32" />
+    <NavigationProperty Name="PAY" Relationship="Self.FK__VILLES__ID_PAYS__51BA1E3A" FromRole="VILLES" ToRole="PAYS" />
+    <NavigationProperty Name="PERSONNEs" Relationship="Self.FK__PERSONNE__Fk_ID___3EA749C6" FromRole="VILLES" ToRole="PERSONNE" />
+  </EntityType>
+  <Association Name="FK__PERSONNE__Fk_ID___4183B671">
+    <End Role="PAYS" Type="Self.PAY" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="ID_PAYS" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_PAYS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VILLES__ID_PAYS__51BA1E3A">
+    <End Role="PAYS" Type="Self.PAY" Multiplicity="0..1" />
+    <End Role="VILLES" Type="Self.VILLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="ID_PAYS" />
+      </Principal>
+      <Dependent Role="VILLES">
+        <PropertyRef Name="ID_PAYS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___3DB3258D">
+    <End Role="SOURCE_PERSONNE" Type="Self.SOURCE_PERSONNE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOURCE_PERSONNE">
+        <PropertyRef Name="ID_SOURCE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_SOURCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___3EA749C6">
+    <End Role="VILLES" Type="Self.VILLE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VILLES">
+        <PropertyRef Name="ID_VILLE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_VILLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___3F9B6DFF">
+    <End Role="SEXE" Type="Self.SEXE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXE">
+        <PropertyRef Name="ID_SEXE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_SEXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___408F9238">
+    <End Role="TYPE_IDENTITE" Type="Self.TYPE_IDENTITE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE_IDENTITE">
+        <PropertyRef Name="ID_TIDEN" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_TIDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SOURCE_PE__ID_TY__351DDF8C">
+    <End Role="TYPE_SOURCE" Type="Self.TYPE_SOURCE" Multiplicity="0..1" />
+    <End Role="SOURCE_PERSONNE" Type="Self.SOURCE_PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE_SOURCE">
+        <PropertyRef Name="ID_TYPE_SOURCE" />
+      </Principal>
+      <Dependent Role="SOURCE_PERSONNE">
+        <PropertyRef Name="ID_TYPE_SOURCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LebraEntities8" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACTIONs" EntityType="Self.ACTION" />
+    <EntitySet Name="AUTOMIBILE_RELATION_PERSON" EntityType="Self.AUTOMIBILE_RELATION_PERSON" />
+    <EntitySet Name="AUTOMOBILEs" EntityType="Self.AUTOMOBILE" />
+    <EntitySet Name="AUTRE_CONTRACT" EntityType="Self.AUTRE_CONTRACT" />
+    <EntitySet Name="COMPANGIE_ASSURANCE" EntityType="Self.COMPANGIE_ASSURANCE" />
+    <EntitySet Name="CONTRACTs" EntityType="Self.CONTRACT" />
+    <EntitySet Name="GARANTIEs" EntityType="Self.GARANTIE" />
+    <EntitySet Name="GARANTIE_AUTOMIBILE" EntityType="Self.GARANTIE_AUTOMIBILE" />
+    <EntitySet Name="INTERMEDIAIREs" EntityType="Self.INTERMEDIAIRE" />
+    <EntitySet Name="MARQUEs" EntityType="Self.MARQUE" />
+    <EntitySet Name="MODELs" EntityType="Self.MODEL" />
+    <EntitySet Name="PAYS" EntityType="Self.PAY" />
+    <EntitySet Name="PERSONNEs" EntityType="Self.PERSONNE" />
+    <EntitySet Name="RC_SCOLAIRE" EntityType="Self.RC_SCOLAIRE" />
+    <EntitySet Name="SETTING_UTILI" EntityType="Self.SETTING_UTILI" />
+    <EntitySet Name="SEXEs" EntityType="Self.SEXE" />
+    <EntitySet Name="SOURCE_PERSONNE" EntityType="Self.SOURCE_PERSONNE" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TOURISMEs" EntityType="Self.TOURISME" />
+    <EntitySet Name="TOURISME_GARANTIE" EntityType="Self.TOURISME_GARANTIE" />
+    <EntitySet Name="TOURISME_PERSONNE_RELATION" EntityType="Self.TOURISME_PERSONNE_RELATION" />
+    <EntitySet Name="TYPE_GARANTIE" EntityType="Self.TYPE_GARANTIE" />
+    <EntitySet Name="TYPE_IDENTITE" EntityType="Self.TYPE_IDENTITE" />
+    <EntitySet Name="TYPE_SOURCE" EntityType="Self.TYPE_SOURCE" />
+    <EntitySet Name="UTILISATEUR_BLOOM" EntityType="Self.UTILISATEUR_BLOOM" />
+    <EntitySet Name="VEHICULE_ASSUREE" EntityType="Self.VEHICULE_ASSUREE" />
+    <EntitySet Name="VILLES" EntityType="Self.VILLE" />
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___4183B671" Association="Self.FK__PERSONNE__Fk_ID___4183B671">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="PERSONNE" EntitySet="PERSONNEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VILLES__ID_PAYS__51BA1E3A" Association="Self.FK__VILLES__ID_PAYS__51BA1E3A">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="VILLES" EntitySet="VILLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3DB3258D" Association="Self.FK__PERSONNE__Fk_ID___3DB3258D">
+      <End Role="SOURCE_PERSONNE" EntitySet="SOURCE_PERSONNE" />
+      <End Role="PERSONNE" EntitySet="PERSONNEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3EA749C6" Association="Self.FK__PERSONNE__Fk_ID___3EA749C6">
+      <End Role="VILLES" EntitySet="VILLES" />
+      <End Role="PERSONNE" EntitySet="PERSONNEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3F9B6DFF" Association="Self.FK__PERSONNE__Fk_ID___3F9B6DFF">
+      <End Role="SEXE" EntitySet="SEXEs" />
+      <End Role="PERSONNE" EntitySet="PERSONNEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___408F9238" Association="Self.FK__PERSONNE__Fk_ID___408F9238">
+      <End Role="TYPE_IDENTITE" EntitySet="TYPE_IDENTITE" />
+      <End Role="PERSONNE" EntitySet="PERSONNEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SOURCE_PE__ID_TY__351DDF8C" Association="Self.FK__SOURCE_PE__ID_TY__351DDF8C">
+      <End Role="TYPE_SOURCE" EntitySet="TYPE_SOURCE" />
+      <End Role="SOURCE_PERSONNE" EntitySet="SOURCE_PERSONNE" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LebraModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LebraModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

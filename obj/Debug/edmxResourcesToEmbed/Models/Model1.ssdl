@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LebraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACTION">
+    <Key>
+      <PropertyRef Name="ID_UTILI" />
+      <PropertyRef Name="ID_CONTRAT_G" />
+    </Key>
+    <Property Name="ID_UTILI" Type="int" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="int" Nullable="false" />
+    <Property Name="TYPE_ACTION" Type="int" />
+    <Property Name="DATE_ACTION" Type="int" />
+    <Property Name="ID_ACTION" Type="int" />
+    <Property Name="TOUCHER" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AUTOMIBILE_RELATION_PERSON">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="int" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="int" Nullable="false" />
+    <Property Name="TYPE_RELATION" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="AUTOMOBILE">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="int" Nullable="false" />
+    <Property Name="ID_VEH_ASSUREE" Type="int" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTRE_CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_AUTRE_CONTRAT" />
+    </Key>
+    <Property Name="ID_AUTRE_CONTRAT" Type="int" Nullable="false" />
+    <Property Name="ID_COMP" Type="int" Nullable="false" />
+    <Property Name="REF_CONTRACT" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="COMPANGIE_ASSURANCE">
+    <Key>
+      <PropertyRef Name="ID_COMP" />
+    </Key>
+    <Property Name="ID_COMP" Type="int" Nullable="false" />
+    <Property Name="COMP_NAME" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_G" />
+    </Key>
+    <Property Name="ID_CONTRAT_G" Type="int" Nullable="false" />
+    <Property Name="ID_INTER" Type="int" Nullable="false" />
+    <Property Name="N_CONTRAT" Type="varchar" MaxLength="100" />
+    <Property Name="DATE_CREATION" Type="int" />
+    <Property Name="DATE_ECHANCE" Type="int" />
+    <Property Name="DUREE_DE_CONTRAT" Type="int" />
+    <Property Name="PRIME_TOTAL" Type="float" />
+  </EntityType>
+  <EntityType Name="GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_GARANTIE" Type="int" Nullable="false" />
+    <Property Name="ID_TYPE" Type="int" Nullable="false" />
+    <Property Name="GARANTIE" Type="varchar" MaxLength="150" />
+    <Property Name="DESC_PUBLIC" Type="text" />
+  </EntityType>
+  <EntityType Name="GARANTIE_AUTOMIBILE">
+    <Key>
+      <PropertyRef Name="ID_CONTRAT_AUTO" />
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_CONTRAT_AUTO" Type="int" Nullable="false" />
+    <Property Name="ID_GARANTIE" Type="int" Nullable="false" />
+    <Property Name="VALEUR_VEHICULE" Type="float" />
+    <Property Name="VALEUR_REMORQUE" Type="float" />
+    <Property Name="TAUX_FRANCHISE" Type="float" />
+    <Property Name="FRANCHISE_MIN" Type="float" />
+    <Property Name="PRIME_ANNUAL" Type="float" />
+    <Property Name="PRIME_COMPTANT" Type="float" />
+    <Property Name="VALEUR_V_MAX" Type="float" />
+    <Property Name="DESES" Type="float" />
+    <Property Name="INVALIDITE" Type="float" />
+    <Property Name="FR_MEDICAUX" Type="float" />
+    <Property Name="FR_RAPATRIEMENT" Type="float" />
+    <Property Name="AMENAG_DOM" Type="float" />
+  </EntityType>
+  <EntityType Name="INTERMEDIAIRE">
+    <Key>
+      <PropertyRef Name="ID_INTER" />
+    </Key>
+    <Property Name="ID_INTER" Type="int" Nullable="false" />
+    <Property Name="INTER_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="INTER_EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="INTER_ADRESSE" Type="text" />
+    <Property Name="INTER_TELEPHONE" Type="varchar" MaxLength="15" />
+    <Property Name="INTER_DESC" Type="text" />
+  </EntityType>
+  <EntityType Name="MARQUE">
+    <Key>
+      <PropertyRef Name="ID_MARQUE" />
+    </Key>
+    <Property Name="ID_MARQUE" Type="int" Nullable="false" />
+    <Property Name="MARQUE" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="MODEL">
+    <Key>
+      <PropertyRef Name="ID_MODEL" />
+    </Key>
+    <Property Name="ID_MODEL" Type="int" Nullable="false" />
+    <Property Name="ID_MARQUE" Type="int" Nullable="false" />
+    <Property Name="MODEL" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PAYS">
+    <Key>
+      <PropertyRef Name="ID_PAYS" />
+    </Key>
+    <Property Name="ID_PAYS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOM_PAYS" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PERSONNE">
+    <Key>
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_PERSONNE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fk_ID_SOURCE" Type="int" />
+    <Property Name="Fk_ID_VILLE" Type="int" />
+    <Property Name="Fk_ID_SEXE" Type="int" />
+    <Property Name="Fk_ID_TIDEN" Type="int" />
+    <Property Name="Fk_ID_PAYS" Type="int" />
+    <Property Name="NOM_COMPLET" Type="varchar" MaxLength="100" />
+    <Property Name="DATE_NAISS" Type="float" />
+    <Property Name="ADRESSE" Type="text" />
+    <Property Name="CODE_POSTAL" Type="varchar" MaxLength="10" />
+    <Property Name="N_TELEPHONE" Type="varchar" MaxLength="20" />
+    <Property Name="N_IDENT" Type="varchar" MaxLength="50" />
+    <Property Name="N_PIRME" Type="varchar" MaxLength="50" />
+    <Property Name="CATE_PERMI" Type="varchar" MaxLength="10" />
+    <Property Name="DATE_PERM" Type="float" />
+    <Property Name="ADRESSE_MAIL" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RC_SCOLAIRE">
+    <Key>
+      <PropertyRef Name="ID_RC_SCOLAIRE" />
+    </Key>
+    <Property Name="ID_RC_SCOLAIRE" Type="int" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="int" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SETTING_UTILI">
+    <Key>
+      <PropertyRef Name="ID_SU" />
+    </Key>
+    <Property Name="ID_SU" Type="int" Nullable="false" />
+    <Property Name="ID_UTILI" Type="int" Nullable="false" />
+    <Property Name="DEFAULT_SU" Type="varchar" MaxLength="15" />
+    <Property Name="TYPE_MENU" Type="int" />
+  </EntityType>
+  <EntityType Name="SEXE">
+    <Key>
+      <PropertyRef Name="ID_SEXE" />
+    </Key>
+    <Property Name="ID_SEXE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SEXE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SOURCE_PERSONNE">
+    <Key>
+      <PropertyRef Name="ID_SOURCE" />
+    </Key>
+    <Property Name="ID_SOURCE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TYPE_SOURCE" Type="int" />
+    <Property Name="NOM_SOURCE" Type="varchar" MaxLength="100" />
+    <Property Name="ADRESSE_SOURCE" Type="text" />
+    <Property Name="TELEPHONE_SOURCE" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL_SOURCE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TOURISME">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="int" Nullable="false" />
+    <Property Name="ID_AUTRE_CONTRAT" Type="int" Nullable="false" />
+    <Property Name="ID_CONTRAT_G" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TOURISME_GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+      <PropertyRef Name="ID_GARANTIE" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="int" Nullable="false" />
+    <Property Name="ID_GARANTIE" Type="int" Nullable="false" />
+    <Property Name="PRIME" Type="float" />
+  </EntityType>
+  <EntityType Name="TOURISME_PERSONNE_RELATION">
+    <Key>
+      <PropertyRef Name="ID_TOURISME" />
+      <PropertyRef Name="ID_PERSONNE" />
+    </Key>
+    <Property Name="ID_TOURISME" Type="int" Nullable="false" />
+    <Property Name="ID_PERSONNE" Type="int" Nullable="false" />
+    <Property Name="TYPE_RELATION" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TYPE_GARANTIE">
+    <Key>
+      <PropertyRef Name="ID_TYPE" />
+    </Key>
+    <Property Name="ID_TYPE" Type="int" Nullable="false" />
+    <Property Name="TYPE_TEXT" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TYPE_IDENTITE">
+    <Key>
+      <PropertyRef Name="ID_TIDEN" />
+    </Key>
+    <Property Name="ID_TIDEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE_IDENTITE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TYPE_SOURCE">
+    <Key>
+      <PropertyRef Name="ID_TYPE_SOURCE" />
+    </Key>
+    <Property Name="ID_TYPE_SOURCE" Type="int" Nullable="false" />
+    <Property Name="TYPE_SOURCE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="UTILISATEUR_BLOOM">
+    <Key>
+      <PropertyRef Name="ID_UTILI" />
+    </Key>
+    <Property Name="ID_UTILI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOM_UTIL" Type="varchar" MaxLength="60" />
+    <Property Name="MOTS_PASS_UTIL" Type="text" />
+    <Property Name="DATE_CREATION" Type="float" />
+    <Property Name="DATE_LAST_CNX" Type="float" />
+    <Property Name="N_TELE" Type="varchar" MaxLength="35" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="35" />
+    <Property Name="Role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VEHICULE_ASSUREE">
+    <Key>
+      <PropertyRef Name="ID_VEH_ASSUREE" />
+    </Key>
+    <Property Name="ID_VEH_ASSUREE" Type="int" Nullable="false" />
+    <Property Name="ID_MARQUE" Type="int" Nullable="false" />
+    <Property Name="ID_MODEL" Type="int" />
+    <Property Name="IMMATRICULATION" Type="varchar" MaxLength="100" />
+    <Property Name="PUIS_F" Type="int" />
+    <Property Name="PTC" Type="int" />
+    <Property Name="REMORQUE" Type="int" />
+    <Property Name="DMC" Type="int" />
+    <Property Name="MUTATION" Type="int" />
+    <Property Name="N_PLACES" Type="int" />
+    <Property Name="ORG_CREDI" Type="varchar" MaxLength="30" />
+    <Property Name="POTE_AV" Type="int" />
+    <Property Name="VALEUR_NEUF" Type="float" />
+    <Property Name="VALEUR_DECLAR" Type="float" />
+    <Property Name="VALEUR_GLACE" Type="float" />
+    <Property Name="VALEUR_AV" Type="float" />
+  </EntityType>
+  <EntityType Name="VILLES">
+    <Key>
+      <PropertyRef Name="ID_VILLE" />
+    </Key>
+    <Property Name="ID_VILLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOM_VILLE" Type="varchar" MaxLength="50" />
+    <Property Name="ID_PAYS" Type="int" />
+  </EntityType>
+  <Association Name="FK__PERSONNE__Fk_ID___3DB3258D">
+    <End Role="SOURCE_PERSONNE" Type="Self.SOURCE_PERSONNE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOURCE_PERSONNE">
+        <PropertyRef Name="ID_SOURCE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_SOURCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___3EA749C6">
+    <End Role="VILLES" Type="Self.VILLES" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VILLES">
+        <PropertyRef Name="ID_VILLE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_VILLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___3F9B6DFF">
+    <End Role="SEXE" Type="Self.SEXE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXE">
+        <PropertyRef Name="ID_SEXE" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_SEXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___408F9238">
+    <End Role="TYPE_IDENTITE" Type="Self.TYPE_IDENTITE" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE_IDENTITE">
+        <PropertyRef Name="ID_TIDEN" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_TIDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PERSONNE__Fk_ID___4183B671">
+    <End Role="PAYS" Type="Self.PAYS" Multiplicity="0..1" />
+    <End Role="PERSONNE" Type="Self.PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="ID_PAYS" />
+      </Principal>
+      <Dependent Role="PERSONNE">
+        <PropertyRef Name="Fk_ID_PAYS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SOURCE_PE__ID_TY__351DDF8C">
+    <End Role="TYPE_SOURCE" Type="Self.TYPE_SOURCE" Multiplicity="0..1" />
+    <End Role="SOURCE_PERSONNE" Type="Self.SOURCE_PERSONNE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE_SOURCE">
+        <PropertyRef Name="ID_TYPE_SOURCE" />
+      </Principal>
+      <Dependent Role="SOURCE_PERSONNE">
+        <PropertyRef Name="ID_TYPE_SOURCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VILLES__ID_PAYS__51BA1E3A">
+    <End Role="PAYS" Type="Self.PAYS" Multiplicity="0..1" />
+    <End Role="VILLES" Type="Self.VILLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYS">
+        <PropertyRef Name="ID_PAYS" />
+      </Principal>
+      <Dependent Role="VILLES">
+        <PropertyRef Name="ID_PAYS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="LebraModelStoreContainer">
+    <EntitySet Name="ACTION" EntityType="Self.ACTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTOMIBILE_RELATION_PERSON" EntityType="Self.AUTOMIBILE_RELATION_PERSON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTOMOBILE" EntityType="Self.AUTOMOBILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTRE_CONTRACT" EntityType="Self.AUTRE_CONTRACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPANGIE_ASSURANCE" EntityType="Self.COMPANGIE_ASSURANCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTRACT" EntityType="Self.CONTRACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GARANTIE" EntityType="Self.GARANTIE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GARANTIE_AUTOMIBILE" EntityType="Self.GARANTIE_AUTOMIBILE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INTERMEDIAIRE" EntityType="Self.INTERMEDIAIRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MARQUE" EntityType="Self.MARQUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MODEL" EntityType="Self.MODEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYS" EntityType="Self.PAYS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERSONNE" EntityType="Self.PERSONNE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RC_SCOLAIRE" EntityType="Self.RC_SCOLAIRE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SETTING_UTILI" EntityType="Self.SETTING_UTILI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEXE" EntityType="Self.SEXE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOURCE_PERSONNE" EntityType="Self.SOURCE_PERSONNE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOURISME" EntityType="Self.TOURISME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOURISME_GARANTIE" EntityType="Self.TOURISME_GARANTIE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOURISME_PERSONNE_RELATION" EntityType="Self.TOURISME_PERSONNE_RELATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TYPE_GARANTIE" EntityType="Self.TYPE_GARANTIE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TYPE_IDENTITE" EntityType="Self.TYPE_IDENTITE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TYPE_SOURCE" EntityType="Self.TYPE_SOURCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UTILISATEUR_BLOOM" EntityType="Self.UTILISATEUR_BLOOM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VEHICULE_ASSUREE" EntityType="Self.VEHICULE_ASSUREE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VILLES" EntityType="Self.VILLES" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3DB3258D" Association="Self.FK__PERSONNE__Fk_ID___3DB3258D">
+      <End Role="SOURCE_PERSONNE" EntitySet="SOURCE_PERSONNE" />
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3EA749C6" Association="Self.FK__PERSONNE__Fk_ID___3EA749C6">
+      <End Role="VILLES" EntitySet="VILLES" />
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___3F9B6DFF" Association="Self.FK__PERSONNE__Fk_ID___3F9B6DFF">
+      <End Role="SEXE" EntitySet="SEXE" />
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___408F9238" Association="Self.FK__PERSONNE__Fk_ID___408F9238">
+      <End Role="TYPE_IDENTITE" EntitySet="TYPE_IDENTITE" />
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PERSONNE__Fk_ID___4183B671" Association="Self.FK__PERSONNE__Fk_ID___4183B671">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="PERSONNE" EntitySet="PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SOURCE_PE__ID_TY__351DDF8C" Association="Self.FK__SOURCE_PE__ID_TY__351DDF8C">
+      <End Role="TYPE_SOURCE" EntitySet="TYPE_SOURCE" />
+      <End Role="SOURCE_PERSONNE" EntitySet="SOURCE_PERSONNE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VILLES__ID_PAYS__51BA1E3A" Association="Self.FK__VILLES__ID_PAYS__51BA1E3A">
+      <End Role="PAYS" EntitySet="PAYS" />
+      <End Role="VILLES" EntitySet="VILLES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

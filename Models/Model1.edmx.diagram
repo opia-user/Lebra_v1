@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e7ef158f4ca4b5483b23fe93fd2a679" Name="Diagram1">
+        <EntityTypeShape EntityType="LebraModel.ACTION" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.AUTOMIBILE_RELATION_PERSON" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.AUTOMOBILE" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.AUTRE_CONTRACT" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.COMPANGIE_ASSURANCE" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.CONTRACT" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.GARANTIE" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.GARANTIE_AUTOMIBILE" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.INTERMEDIAIRE" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.MARQUE" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.MODEL" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.PAY" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.PERSONNE" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.RC_SCOLAIRE" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.SETTING_UTILI" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.SEXE" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.SOURCE_PERSONNE" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.sysdiagram" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TOURISME" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TOURISME_GARANTIE" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TOURISME_PERSONNE_RELATION" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TYPE_GARANTIE" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TYPE_IDENTITE" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.TYPE_SOURCE" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.UTILISATEUR_BLOOM" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.VEHICULE_ASSUREE" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LebraModel.VILLE" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="LebraModel.FK__PERSONNE__Fk_ID___4183B671" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__VILLES__ID_PAYS__51BA1E3A" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__PERSONNE__Fk_ID___3DB3258D" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__PERSONNE__Fk_ID___3EA749C6" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__PERSONNE__Fk_ID___3F9B6DFF" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__PERSONNE__Fk_ID___408F9238" ManuallyRouted="false" />
+        <AssociationConnector Association="LebraModel.FK__SOURCE_PE__ID_TY__351DDF8C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

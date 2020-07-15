@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LebraModelStoreContainer" CdmEntityContainer="LebraEntities8">
+    <EntitySetMapping Name="ACTIONs">
+      <EntityTypeMapping TypeName="LebraModel.ACTION">
+        <MappingFragment StoreEntitySet="ACTION">
+          <ScalarProperty Name="ID_UTILI" ColumnName="ID_UTILI" />
+          <ScalarProperty Name="ID_CONTRAT_G" ColumnName="ID_CONTRAT_G" />
+          <ScalarProperty Name="TYPE_ACTION" ColumnName="TYPE_ACTION" />
+          <ScalarProperty Name="DATE_ACTION" ColumnName="DATE_ACTION" />
+          <ScalarProperty Name="ID_ACTION" ColumnName="ID_ACTION" />
+          <ScalarProperty Name="TOUCHER" ColumnName="TOUCHER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTOMIBILE_RELATION_PERSON">
+      <EntityTypeMapping TypeName="LebraModel.AUTOMIBILE_RELATION_PERSON">
+        <MappingFragment StoreEntitySet="AUTOMIBILE_RELATION_PERSON">
+          <ScalarProperty Name="ID_CONTRAT_AUTO" ColumnName="ID_CONTRAT_AUTO" />
+          <ScalarProperty Name="ID_PERSONNE" ColumnName="ID_PERSONNE" />
+          <ScalarProperty Name="TYPE_RELATION" ColumnName="TYPE_RELATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTOMOBILEs">
+      <EntityTypeMapping TypeName="LebraModel.AUTOMOBILE">
+        <MappingFragment StoreEntitySet="AUTOMOBILE">
+          <ScalarProperty Name="ID_CONTRAT_AUTO" ColumnName="ID_CONTRAT_AUTO" />
+          <ScalarProperty Name="ID_VEH_ASSUREE" ColumnName="ID_VEH_ASSUREE" />
+          <ScalarProperty Name="ID_CONTRAT_G" ColumnName="ID_CONTRAT_G" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTRE_CONTRACT">
+      <EntityTypeMapping TypeName="LebraModel.AUTRE_CONTRACT">
+        <MappingFragment StoreEntitySet="AUTRE_CONTRACT">
+          <ScalarProperty Name="ID_AUTRE_CONTRAT" ColumnName="ID_AUTRE_CONTRAT" />
+          <ScalarProperty Name="ID_COMP" ColumnName="ID_COMP" />
+          <ScalarProperty Name="REF_CONTRACT" ColumnName="REF_CONTRACT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPANGIE_ASSURANCE">
+      <EntityTypeMapping TypeName="LebraModel.COMPANGIE_ASSURANCE">
+        <MappingFragment StoreEntitySet="COMPANGIE_ASSURANCE">
+          <ScalarProperty Name="ID_COMP" ColumnName="ID_COMP" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRACTs">
+      <EntityTypeMapping TypeName="LebraModel.CONTRACT">
+        <MappingFragment StoreEntitySet="CONTRACT">
+          <ScalarProperty Name="ID_CONTRAT_G" ColumnName="ID_CONTRAT_G" />
+          <ScalarProperty Name="ID_INTER" ColumnName="ID_INTER" />
+          <ScalarProperty Name="N_CONTRAT" ColumnName="N_CONTRAT" />
+          <ScalarProperty Name="DATE_CREATION" ColumnName="DATE_CREATION" />
+          <ScalarProperty Name="DATE_ECHANCE" ColumnName="DATE_ECHANCE" />
+          <ScalarProperty Name="DUREE_DE_CONTRAT" ColumnName="DUREE_DE_CONTRAT" />
+          <ScalarProperty Name="PRIME_TOTAL" ColumnName="PRIME_TOTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARANTIEs">
+      <EntityTypeMapping TypeName="LebraModel.GARANTIE">
+        <MappingFragment StoreEntitySet="GARANTIE">
+          <ScalarProperty Name="ID_GARANTIE" ColumnName="ID_GARANTIE" />
+          <ScalarProperty Name="ID_TYPE" ColumnName="ID_TYPE" />
+          <ScalarProperty Name="GARANTIE1" ColumnName="GARANTIE" />
+          <ScalarProperty Name="DESC_PUBLIC" ColumnName="DESC_PUBLIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARANTIE_AUTOMIBILE">
+      <EntityTypeMapping TypeName="LebraModel.GARANTIE_AUTOMIBILE">
+        <MappingFragment StoreEntitySet="GARANTIE_AUTOMIBILE">
+          <ScalarProperty Name="ID_CONTRAT_AUTO" ColumnName="ID_CONTRAT_AUTO" />
+          <ScalarProperty Name="ID_GARANTIE" ColumnName="ID_GARANTIE" />
+          <ScalarProperty Name="VALEUR_VEHICULE" ColumnName="VALEUR_VEHICULE" />
+          <ScalarProperty Name="VALEUR_REMORQUE" ColumnName="VALEUR_REMORQUE" />
+          <ScalarProperty Name="TAUX_FRANCHISE" ColumnName="TAUX_FRANCHISE" />
+          <ScalarProperty Name="FRANCHISE_MIN" ColumnName="FRANCHISE_MIN" />
+          <ScalarProperty Name="PRIME_ANNUAL" ColumnName="PRIME_ANNUAL" />
+          <ScalarProperty Name="PRIME_COMPTANT" ColumnName="PRIME_COMPTANT" />
+          <ScalarProperty Name="VALEUR_V_MAX" ColumnName="VALEUR_V_MAX" />
+          <ScalarProperty Name="DESES" ColumnName="DESES" />
+          <ScalarProperty Name="INVALIDITE" ColumnName="INVALIDITE" />
+          <ScalarProperty Name="FR_MEDICAUX" ColumnName="FR_MEDICAUX" />
+          <ScalarProperty Name="FR_RAPATRIEMENT" ColumnName="FR_RAPATRIEMENT" />
+          <ScalarProperty Name="AMENAG_DOM" ColumnName="AMENAG_DOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INTERMEDIAIREs">
+      <EntityTypeMapping TypeName="LebraModel.INTERMEDIAIRE">
+        <MappingFragment StoreEntitySet="INTERMEDIAIRE">
+          <ScalarProperty Name="ID_INTER" ColumnName="ID_INTER" />
+          <ScalarProperty Name="INTER_NAME" ColumnName="INTER_NAME" />
+          <ScalarProperty Name="INTER_EMAIL" ColumnName="INTER_EMAIL" />
+          <ScalarProperty Name="INTER_ADRESSE" ColumnName="INTER_ADRESSE" />
+          <ScalarProperty Name="INTER_TELEPHONE" ColumnName="INTER_TELEPHONE" />
+          <ScalarProperty Name="INTER_DESC" ColumnName="INTER_DESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MARQUEs">
+      <EntityTypeMapping TypeName="LebraModel.MARQUE">
+        <MappingFragment StoreEntitySet="MARQUE">
+          <ScalarProperty Name="ID_MARQUE" ColumnName="ID_MARQUE" />
+          <ScalarProperty Name="MARQUE1" ColumnName="MARQUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODELs">
+      <EntityTypeMapping TypeName="LebraModel.MODEL">
+        <MappingFragment StoreEntitySet="MODEL">
+          <ScalarProperty Name="ID_MODEL" ColumnName="ID_MODEL" />
+          <ScalarProperty Name="ID_MARQUE" ColumnName="ID_MARQUE" />
+          <ScalarProperty Name="MODEL1" ColumnName="MODEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYS">
+      <EntityTypeMapping TypeName="LebraModel.PAY">
+        <MappingFragment StoreEntitySet="PAYS">
+          <ScalarProperty Name="ID_PAYS" ColumnName="ID_PAYS" />
+          <ScalarProperty Name="NOM_PAYS" ColumnName="NOM_PAYS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONNEs">
+      <EntityTypeMapping TypeName="LebraModel.PERSONNE">
+        <MappingFragment StoreEntitySet="PERSONNE">
+          <ScalarProperty Name="ID_PERSONNE" ColumnName="ID_PERSONNE" />
+          <ScalarProperty Name="Fk_ID_SOURCE" ColumnName="Fk_ID_SOURCE" />
+          <ScalarProperty Name="Fk_ID_VILLE" ColumnName="Fk_ID_VILLE" />
+          <ScalarProperty Name="Fk_ID_SEXE" ColumnName="Fk_ID_SEXE" />
+          <ScalarProperty Name="Fk_ID_TIDEN" ColumnName="Fk_ID_TIDEN" />
+          <ScalarProperty Name="Fk_ID_PAYS" ColumnName="Fk_ID_PAYS" />
+          <ScalarProperty Name="NOM_COMPLET" ColumnName="NOM_COMPLET" />
+          <ScalarProperty Name="DATE_NAISS" ColumnName="DATE_NAISS" />
+          <ScalarProperty Name="ADRESSE" ColumnName="ADRESSE" />
+          <ScalarProperty Name="CODE_POSTAL" ColumnName="CODE_POSTAL" />
+          <ScalarProperty Name="N_TELEPHONE" ColumnName="N_TELEPHONE" />
+          <ScalarProperty Name="N_IDENT" ColumnName="N_IDENT" />
+          <ScalarProperty Name="N_PIRME" ColumnName="N_PIRME" />
+          <ScalarProperty Name="CATE_PERMI" ColumnName="CATE_PERMI" />
+          <ScalarProperty Name="DATE_PERM" ColumnName="DATE_PERM" />
+          <ScalarProperty Name="ADRESSE_MAIL" ColumnName="ADRESSE_MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RC_SCOLAIRE">
+      <EntityTypeMapping TypeName="LebraModel.RC_SCOLAIRE">
+        <MappingFragment StoreEntitySet="RC_SCOLAIRE">
+          <ScalarProperty Name="ID_RC_SCOLAIRE" ColumnName="ID_RC_SCOLAIRE" />
+          <ScalarProperty Name="ID_PERSONNE" ColumnName="ID_PERSONNE" />
+          <ScalarProperty Name="ID_CONTRAT_G" ColumnName="ID_CONTRAT_G" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SETTING_UTILI">
+      <EntityTypeMapping TypeName="LebraModel.SETTING_UTILI">
+        <MappingFragment StoreEntitySet="SETTING_UTILI">
+          <ScalarProperty Name="ID_SU" ColumnName="ID_SU" />
+          <ScalarProperty Name="ID_UTILI" ColumnName="ID_UTILI" />
+          <ScalarProperty Name="DEFAULT_SU" ColumnName="DEFAULT_SU" />
+          <ScalarProperty Name="TYPE_MENU" ColumnName="TYPE_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEXEs">
+      <EntityTypeMapping TypeName="LebraModel.SEXE">
+        <MappingFragment StoreEntitySet="SEXE">
+          <ScalarProperty Name="ID_SEXE" ColumnName="ID_SEXE" />
+          <ScalarProperty Name="SEXE1" ColumnName="SEXE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOURCE_PERSONNE">
+      <EntityTypeMapping TypeName="LebraModel.SOURCE_PERSONNE">
+        <MappingFragment StoreEntitySet="SOURCE_PERSONNE">
+          <ScalarProperty Name="ID_SOURCE" ColumnName="ID_SOURCE" />
+          <ScalarProperty Name="ID_TYPE_SOURCE" ColumnName="ID_TYPE_SOURCE" />
+          <ScalarProperty Name="NOM_SOURCE" ColumnName="NOM_SOURCE" />
+          <ScalarProperty Name="ADRESSE_SOURCE" ColumnName="ADRESSE_SOURCE" />
+          <ScalarProperty Name="TELEPHONE_SOURCE" ColumnName="TELEPHONE_SOURCE" />
+          <ScalarProperty Name="EMAIL_SOURCE" ColumnName="EMAIL_SOURCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LebraModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURISMEs">
+      <EntityTypeMapping TypeName="LebraModel.TOURISME">
+        <MappingFragment StoreEntitySet="TOURISME">
+          <ScalarProperty Name="ID_TOURISME" ColumnName="ID_TOURISME" />
+          <ScalarProperty Name="ID_AUTRE_CONTRAT" ColumnName="ID_AUTRE_CONTRAT" />
+          <ScalarProperty Name="ID_CONTRAT_G" ColumnName="ID_CONTRAT_G" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURISME_GARANTIE">
+      <EntityTypeMapping TypeName="LebraModel.TOURISME_GARANTIE">
+        <MappingFragment StoreEntitySet="TOURISME_GARANTIE">
+          <ScalarProperty Name="ID_TOURISME" ColumnName="ID_TOURISME" />
+          <ScalarProperty Name="ID_GARANTIE" ColumnName="ID_GARANTIE" />
+          <ScalarProperty Name="PRIME" ColumnName="PRIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOURISME_PERSONNE_RELATION">
+      <EntityTypeMapping TypeName="LebraModel.TOURISME_PERSONNE_RELATION">
+        <MappingFragment StoreEntitySet="TOURISME_PERSONNE_RELATION">
+          <ScalarProperty Name="ID_TOURISME" ColumnName="ID_TOURISME" />
+          <ScalarProperty Name="ID_PERSONNE" ColumnName="ID_PERSONNE" />
+          <ScalarProperty Name="TYPE_RELATION" ColumnName="TYPE_RELATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPE_GARANTIE">
+      <EntityTypeMapping TypeName="LebraModel.TYPE_GARANTIE">
+        <MappingFragment StoreEntitySet="TYPE_GARANTIE">
+          <ScalarProperty Name="ID_TYPE" ColumnName="ID_TYPE" />
+          <ScalarProperty Name="TYPE_TEXT" ColumnName="TYPE_TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPE_IDENTITE">
+      <EntityTypeMapping TypeName="LebraModel.TYPE_IDENTITE">
+        <MappingFragment StoreEntitySet="TYPE_IDENTITE">
+          <ScalarProperty Name="ID_TIDEN" ColumnName="ID_TIDEN" />
+          <ScalarProperty Name="TYPE_IDENTITE1" ColumnName="TYPE_IDENTITE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPE_SOURCE">
+      <EntityTypeMapping TypeName="LebraModel.TYPE_SOURCE">
+        <MappingFragment StoreEntitySet="TYPE_SOURCE">
+          <ScalarProperty Name="ID_TYPE_SOURCE" ColumnName="ID_TYPE_SOURCE" />
+          <ScalarProperty Name="TYPE_SOURCE1" ColumnName="TYPE_SOURCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UTILISATEUR_BLOOM">
+      <EntityTypeMapping TypeName="LebraModel.UTILISATEUR_BLOOM">
+        <MappingFragment StoreEntitySet="UTILISATEUR_BLOOM">
+          <ScalarProperty Name="ID_UTILI" ColumnName="ID_UTILI" />
+          <ScalarProperty Name="NOM_UTIL" ColumnName="NOM_UTIL" />
+          <ScalarProperty Name="MOTS_PASS_UTIL" ColumnName="MOTS_PASS_UTIL" />
+          <ScalarProperty Name="DATE_CREATION" ColumnName="DATE_CREATION" />
+          <ScalarProperty Name="DATE_LAST_CNX" ColumnName="DATE_LAST_CNX" />
+          <ScalarProperty Name="N_TELE" ColumnName="N_TELE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VEHICULE_ASSUREE">
+      <EntityTypeMapping TypeName="LebraModel.VEHICULE_ASSUREE">
+        <MappingFragment StoreEntitySet="VEHICULE_ASSUREE">
+          <ScalarProperty Name="ID_VEH_ASSUREE" ColumnName="ID_VEH_ASSUREE" />
+          <ScalarProperty Name="ID_MARQUE" ColumnName="ID_MARQUE" />
+          <ScalarProperty Name="ID_MODEL" ColumnName="ID_MODEL" />
+          <ScalarProperty Name="IMMATRICULATION" ColumnName="IMMATRICULATION" />
+          <ScalarProperty Name="PUIS_F" ColumnName="PUIS_F" />
+          <ScalarProperty Name="PTC" ColumnName="PTC" />
+          <ScalarProperty Name="REMORQUE" ColumnName="REMORQUE" />
+          <ScalarProperty Name="DMC" ColumnName="DMC" />
+          <ScalarProperty Name="MUTATION" ColumnName="MUTATION" />
+          <ScalarProperty Name="N_PLACES" ColumnName="N_PLACES" />
+          <ScalarProperty Name="ORG_CREDI" ColumnName="ORG_CREDI" />
+          <ScalarProperty Name="POTE_AV" ColumnName="POTE_AV" />
+          <ScalarProperty Name="VALEUR_NEUF" ColumnName="VALEUR_NEUF" />
+          <ScalarProperty Name="VALEUR_DECLAR" ColumnName="VALEUR_DECLAR" />
+          <ScalarProperty Name="VALEUR_GLACE" ColumnName="VALEUR_GLACE" />
+          <ScalarProperty Name="VALEUR_AV" ColumnName="VALEUR_AV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VILLES">
+      <EntityTypeMapping TypeName="LebraModel.VILLE">
+        <MappingFragment StoreEntitySet="VILLES">
+          <ScalarProperty Name="ID_VILLE" ColumnName="ID_VILLE" />
+          <ScalarProperty Name="NOM_VILLE" ColumnName="NOM_VILLE" />
+          <ScalarProperty Name="ID_PAYS" ColumnName="ID_PAYS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="LebraModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="LebraModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="LebraModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="LebraModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LebraModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="LebraModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LebraModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LebraModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LebraModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
